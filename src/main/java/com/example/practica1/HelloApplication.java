@@ -1,5 +1,6 @@
 package com.example.practica1;
 
+import com.example.practica1.modelos.Conexion;
 import com.example.practica1.vistas.Calculadora;
 import com.example.practica1.vistas.Loteria;
 import com.example.practica1.vistas.Restaurante;
@@ -58,6 +59,7 @@ public class HelloApplication extends Application {
     }
 
     public void start(Stage stage) throws IOException {
+        connectToDB();
         CrearUI();
         borderPane = new BorderPane();
         borderPane.setLeft(menuBar);
@@ -67,6 +69,11 @@ public class HelloApplication extends Application {
                 .add(getClass().getResource("/estilos/estilos.css").toExternalForm());
         stage.setScene(escena);
         stage.show();
+    }
+
+    public void connectToDB(){
+        Conexion.createConnextion();
+        System.out.println("Conexion establecida");
     }
 
     public static void main(String[] args) {
