@@ -8,4 +8,5 @@ module com.example.practica1 {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires mysql.connector.j;
+    opens com.example.practica1.modelos;
 }

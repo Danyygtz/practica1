@@ -1,8 +1,10 @@
 package com.example.practica1;
 
+import com.example.practica1.components.Hilo;
 import com.example.practica1.modelos.Conexion;
 import com.example.practica1.vistas.Calculadora;
 import com.example.practica1.vistas.Loteria;
+import com.example.practica1.vistas.PistaAtletismo;
 import com.example.practica1.vistas.Restaurante;
 
 import javafx.application.Application;
@@ -21,7 +23,7 @@ public class HelloApplication extends Application {
     private BorderPane borderPane;
     private MenuBar menuBar;
     private Menu menuParcial1, menuParcial2, menuSalir;
-    private MenuItem mitCalculadora, mitLoteria, mitSalir, mitRestaurante;
+    private MenuItem mitCalculadora, mitLoteria, mitSalir, mitRestaurante, mitPista;
 
 
     private  void CrearUI(){
@@ -36,8 +38,10 @@ public class HelloApplication extends Application {
 
         mitRestaurante = new MenuItem("Restaurante");
         mitRestaurante.setOnAction((event)->new Restaurante());
+        mitPista = new MenuItem("Pista Atletismo");
+        mitPista.setOnAction((event)-> new PistaAtletismo());
         menuParcial2 = new Menu("Parcial 2");
-        menuParcial2.getItems().addAll(mitRestaurante);
+        menuParcial2.getItems().addAll(mitRestaurante,mitPista);
 
         menuSalir = new Menu("Mas opciones");
         mitSalir = new MenuItem("Salir");
@@ -59,6 +63,7 @@ public class HelloApplication extends Application {
     }
 
     public void start(Stage stage) throws IOException {
+
         connectToDB();
         CrearUI();
         borderPane = new BorderPane();
