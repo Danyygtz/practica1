@@ -35,6 +35,7 @@ public class HelloApplication extends Application {
         menuParcial1 = new Menu("Parcial 1"); //Pestañas q se despliegan del parcial 1
         menuParcial1.getItems().add(mitCalculadora);
         menuParcial1.getItems().add(mitLoteria);
+        int b;
 
         mitRestaurante = new MenuItem("Restaurante");
         mitRestaurante.setOnAction((event)->new Restaurante());

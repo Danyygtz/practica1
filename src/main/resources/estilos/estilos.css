@@ -28,7 +28,7 @@
      -fx-border-color: #000;
     }
 
-    .menu-item: hover{
+    .menu-item:hover{
      -fx-background-color: #000;
      -fx-font-weight: bold;
     }
